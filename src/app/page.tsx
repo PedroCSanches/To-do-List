@@ -24,15 +24,15 @@ export default function Home() {
 
 
     function addTask() {
-      taskList.push({
+
+
+      if(indexEdit == -1) {
+        taskList.push({
         done:false,
         task:task
       })
       setTaskList([...taskList])
       setTask("")
-
-      if(indexEdit == -1) {
-        addTask
       }else{
         taskList[indexEdit] = {done:false , task:task}
         setTaskList([...taskList])
